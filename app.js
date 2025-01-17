@@ -4,32 +4,32 @@ let sorteado = []
 
 
 
-function adicionarAmigo(){
+function adicionarAmigo() {
 
       const nome = document.querySelector("#amigo");
-      if(nome.value === ""){
+      if (nome.value === "") {
             alert("Por favor, insira um nome.");
-      }else{
+      } else {
             amigos.push(nome.value);
             limparCampo(nome)
             listarAmigos()
       }
 }
 
-function listarAmigos(){
+function listarAmigos() {
       listaAmigos.innerHTML = "";
       amigos.forEach(amigo => {
             const li = document.createElement("li");
             li.textContent = amigo;
             listaAmigos.appendChild(li);
-          });
+      });
 }
 
-function limparCampo(campo){
+function limparCampo(campo) {
       campo.value = null;
 }
 
-function sortearAmigo(){
+function sortearAmigo() {
       let resultado = document.querySelector("#resultado");
 
 
@@ -40,10 +40,10 @@ function sortearAmigo(){
 
       let nomeSorteado;
 
-      do{
+      do {
             nomeSorteado = Math.floor(Math.random() * amigos.length)
-            resultado.innerHTML = amigos[nomeSorteado];
-      }while(sorteado.includes(nomeSorteado));
+            resultado.innerHTML = "Nome sorteado: " + amigos[nomeSorteado];
+      } while (sorteado.includes(nomeSorteado));
 
       sorteado.push(nomeSorteado)
 
